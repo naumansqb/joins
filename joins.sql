@@ -24,7 +24,7 @@ ORDER BY (p.ProductName);
 SELECT p.ProductName, c.CategoryName
 FROM products p
 INNER JOIN categories c ON p.CategoryID = c.CategoryID
-WHERE p.ProductID = (SELECT MAX(p.UnitPrice) FROM products);
+WHERE p.UnitPrice = (SELECT MAX(UnitPrice) FROM products);
 
 
 -- Question 5
