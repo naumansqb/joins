@@ -34,9 +34,8 @@ INNER JOIN shippers s ON o.ShipVia = s.ShipperID
 WHERE o.ShipCountry = "Germany";
 
 -- Question 6
-SELECT o.OrderID,o.OrderDate, o.ShipName, o.ShipAddress, s.CompanyName
+SELECT o.OrderID,o.OrderDate, o.ShipName, o.ShipAddress
 FROM orders o
-INNER JOIN shippers s ON o.ShipVia = s.ShipperID
 INNER JOIN `order details` od ON o.OrderID = od.OrderID
 WHERE od.ProductID = (SELECT ProductID FROM products p WHERE p.ProductName = "Sasquatch Ale");
 
